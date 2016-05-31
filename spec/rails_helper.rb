@@ -21,8 +21,6 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
 
   config.include FactoryGirl::Syntax::Methods
-
-  config.extend ControllerUtils, type: :controller
 end
 
 Shoulda::Matchers.configure do |config|
