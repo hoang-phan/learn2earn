@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: learn2earn_development
+
+test: &test
+  <<: *default
+  database: learn2earn_test
+
+production:
+  <<: *default
+  database: learn2earn_production
+  username: learn2earn
+  password: <%= ENV['LEARN2EARN_DATABASE_PASSWORD'] %>
+
+cucumber:
+  <<: *test
